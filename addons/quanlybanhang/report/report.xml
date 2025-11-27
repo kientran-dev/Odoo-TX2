@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_sanpham" model="ir.actions.report">
+            <field name="name">Báo cáo sản phẩm</field>
+            <field name="model">sanpham</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">quanlybanhang.report_sanpham_template</field>
+            <field name="report_file">quanlybanhang.report_sanpham_template</field>
+            <field name="binding_model_id" ref="model_sanpham"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</odoo>

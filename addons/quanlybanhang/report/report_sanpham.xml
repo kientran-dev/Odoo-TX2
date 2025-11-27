@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_sanpham_template">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Báo cáo chi tiết sản phẩm</h2>
+                        <p>Đây là báo cáo cho sản phẩm: <span t-field="doc.tensp"/></p>
+                        
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th name="th_masp" class="text-left">Mã sản phẩm</th>
+                                    <th name="th_tensp" class="text-left">Tên sản phẩm</th>
+                                    <th name="th_soluong" class="text-left">Số lượng</th>
+                                    <th name="th_giaban" class="text-left">Giá bán</th>
+                                    <th name="th_mausac" class="text-left">Màu sắc</th>
+                                </tr>
+                            </thead>
+                            <tbody class="sale_tbody">
+                                <tr>
+                                    <td><span t-field="doc.masp"/></td>
+                                    <td><span t-field="doc.tensp"/></td>
+                                    <td><span t-field="doc.soluong"/></td>
+                                    <td><span t-field="doc.giaban"/></td>
+                                    <td><span t-field="doc.mausac"/></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

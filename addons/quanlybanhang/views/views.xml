@@ -27,7 +27,23 @@
                             <field name="sodt"/>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
+            </field>
+        </record>
+
+        <record id="hang_view_search" model="ir.ui.view">
+            <field name="name">hang.view.search</field>
+            <field name="model">hang</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tenhang"/>
+                    <field name="mahang"/>
+                </search>
             </field>
         </record>
 
@@ -58,7 +74,28 @@
                             <field name="sdt"/>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
+            </field>
+        </record>
+
+        <record id="nhanvien_view_search" model="ir.ui.view">
+            <field name="name">nhanvien.view.search</field>
+            <field name="model">nhanvien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tennv"/>
+                    <field name="manv"/>
+                    <filter name="filter_nam" string="Nam" domain="[('gioitinh', '=', 'Nam')]"/>
+                    <filter name="filter_nu" string="Nữ" domain="[('gioitinh', '=', 'Nữ')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_gioitinh" string="Giới tính" context="{'group_by': 'gioitinh'}"/>
+                    </group>
+                </search>
             </field>
         </record>
 
@@ -91,7 +128,29 @@
                             <field name="mausac"/>
                         </group>
                     </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
                 </form>
+            </field>
+        </record>
+
+        <record id="sanpham_view_search" model="ir.ui.view">
+            <field name="name">sanpham.view.search</field>
+            <field name="model">sanpham</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="tensp"/>
+                    <field name="masp"/>
+                    <filter name="filter_xanh" string="Xanh" domain="[('mausac', '=', 'Xanh')]"/>
+                    <filter name="filter_do" string="Đỏ" domain="[('mausac', '=', 'Đỏ')]"/>
+                    <filter name="filter_vang" string="Vàng" domain="[('mausac', '=', 'Vàng')]"/>
+                    <group expand="0" string="Group By">
+                        <filter name="groupby_mausac" string="Màu sắc" context="{'group_by': 'mausac'}"/>
+                    </group>
+                </search>
             </field>
         </record>
 
